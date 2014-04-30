@@ -60,7 +60,7 @@ A rack app consists of :
 
 Let's write two simple rack apps :
 
-```
+```ruby
 # myrackclass.rb
 
 require 'rack'
@@ -82,7 +82,7 @@ end
 run MyRackApp.new
 ```
 
-```
+```ruby
 # myrackproc.rb
 
 require 'rack'
@@ -111,7 +111,7 @@ Those two commands will start the default `WEBRick` server provided with Ruby.
 
 If you'd like to change the server or port your rack applications are using, you must change the `run MyRackApp.new` part of your code with a more specific set of instructions :
 
-```
+```ruby
 # For a custom class
 Rack::Server.start(app: MyRackApp.new, server: 'thin', Port: 9876)
 
@@ -123,7 +123,7 @@ Rack::Server.start(app: my_rack_app, server: 'thin', Port: 9876)
 
 Well in our Rack application, our rails clone will provide us with the status code and the content.
 
-```
+```ruby
 class MyRackApp
   def call(env)
     # RailsClone::ProcessRequestAndShit.new
